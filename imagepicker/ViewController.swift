@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.text = ""
         } else {
         bottomTextField.text = ""
-        }
+        }  
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
