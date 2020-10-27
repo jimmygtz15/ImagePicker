@@ -61,9 +61,12 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C5-sb-3zC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQE-qF-VlP">
                                 <rect key="frame" x="346" y="44" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T81-IP-3kC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -72,26 +75,26 @@
                             <constraint firstItem="vAn-b2-WcR" firstAttribute="top" secondItem="TrI-PN-ypk" secondAttribute="bottom" constant="100" id="0YQ-XN-fI3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jkM-en-mlE" secondAttribute="bottom" constant="49" id="0az-N7-1HT"/>
                             <constraint firstItem="jkM-en-mlE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="10J-jr-ouK"/>
-                            <constraint firstItem="2C5-sb-3zC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3O3-Ii-NTl"/>
                             <constraint firstItem="TrI-PN-ypk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A5i-gr-FTn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jkM-en-mlE" secondAttribute="trailing" id="GIY-wp-obH"/>
                             <constraint firstItem="Zwx-ub-J1H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KUT-3Y-qHx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zwx-ub-J1H" secondAttribute="trailing" constant="20" id="T5Z-UO-WDm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2C5-sb-3zC" secondAttribute="trailing" constant="20" id="Vmi-Hf-toq"/>
                             <constraint firstItem="baj-MX-q6v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wn8-C2-Njf"/>
                             <constraint firstItem="jkM-en-mlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YdL-pG-yUW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TrI-PN-ypk" secondAttribute="trailing" constant="20" id="aT0-7v-95f"/>
                             <constraint firstItem="vAn-b2-WcR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c1e-u5-7zW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nQE-qF-VlP" secondAttribute="trailing" constant="20" id="gd8-zH-G2C"/>
                             <constraint firstItem="Zwx-ub-J1H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hSs-7E-YTJ"/>
                             <constraint firstItem="vAn-b2-WcR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iP2-tf-kdC"/>
                             <constraint firstItem="vAn-b2-WcR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ncX-Vj-sMG"/>
+                            <constraint firstItem="nQE-qF-VlP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oTC-hb-29L"/>
                             <constraint firstItem="baj-MX-q6v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x6R-eP-t4c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="TrI-PN-ypk" id="GBq-XM-Uln"/>
                         <outlet property="cameraButton" destination="xWY-11-nfJ" id="iVf-Zl-hcb"/>
-                        <outlet property="cancelButton" destination="2C5-sb-3zC" id="hjT-sH-34s"/>
+                        <outlet property="cancelButton" destination="nQE-qF-VlP" id="dIL-fR-5bA"/>
                         <outlet property="imagePickerView" destination="jkM-en-mlE" id="5cX-jM-c5z"/>
                         <outlet property="shareButton" destination="baj-MX-q6v" id="9oL-I5-LZO"/>
                         <outlet property="toolBar" destination="vAn-b2-WcR" id="c7R-fU-ZsP"/>

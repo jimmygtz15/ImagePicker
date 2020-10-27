@@ -19,9 +19,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        .foregroundColor: UIColor.white,
-        .strokeColor: UIColor.white,
-        .strokeWidth: 4
+        .strokeColor: UIColor.black,
+        .strokeWidth: -3.0,
+        .foregroundColor: UIColor.white
         ]
     
 //    struct Meme {
@@ -35,16 +35,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         topTextField.delegate = self
         bottomTextField.delegate = self
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.text = "TOP"
-        topTextField.textAlignment = .center
-        
-        
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
-        
+        textAttributes()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = false
     }
@@ -64,10 +55,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardHideNotifications()
     }
     
+    func textAttributes() {
+        topTextField.defaultTextAttributes = memeTextAttributes
+        topTextField.text = "TOP"
+        topTextField.textAlignment = .center
+        
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.text = "BOTTOM"
+        bottomTextField.textAlignment = .center
+    }
+    
     @IBAction func shareButtonPressed(_ sender: Any) {
         let items = [generatedMemedImage()]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        imagePickerView.image = .none
+        textAttributes()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -174,6 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         toolBar.isHidden = false
         navigationController?.isNavigationBarHidden = false
+        shareButton.isHidden = false
         return memedImage
     }
     
