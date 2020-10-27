@@ -24,13 +24,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         .foregroundColor: UIColor.white
         ]
     
-//    struct Meme {
-//        let topText: String
-//        let bottomText: String
-//        let originalImage: UIImage
-//        let memedImage: UIImage
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         topTextField.delegate = self
@@ -99,9 +92,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return false
     }
     
-    
-    
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imagePickerView.image = image
@@ -163,10 +153,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func unsubscribeFromKeyboardHideNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-//    func save() {
-//        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generatedMemedImage())
-//    }
     
     func generatedMemedImage() -> UIImage {
         

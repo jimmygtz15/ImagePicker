@@ -20,7 +20,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwx-ub-J1H">
-                                <rect key="frame" x="20" y="144" width="374" height="49.5"/>
+                                <rect key="frame" x="20" y="82" width="374" height="49.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -39,28 +39,23 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAn-b2-WcR">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="EC2-pa-OBr"/>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="BeX-Jj-ShP"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="DfX-IP-Zfn"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="PSK-H6-X0g"/>
                                     <barButtonItem title="album" image="camera.on.rectangle.fill" catalog="system" id="xWY-11-nfJ">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="9Ob-hI-rEK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Tja-kf-1vH"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="DfX-IP-Zfn"/>
                                     <barButtonItem title="Album" id="7jr-aV-BxN">
                                         <connections>
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="FPU-CA-oCv"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="PSK-H6-X0g"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Tja-kf-1vH"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-PN-ypk">
-                                <rect key="frame" x="20" y="663.5" width="374" height="49.5"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQE-qF-VlP">
                                 <rect key="frame" x="346" y="44" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
@@ -68,20 +63,26 @@
                                     <action selector="cancelButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T81-IP-3kC"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-PN-ypk">
+                                <rect key="frame" x="29" y="755" width="374" height="49.5"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vAn-b2-WcR" firstAttribute="top" secondItem="TrI-PN-ypk" secondAttribute="bottom" constant="100" id="0YQ-XN-fI3"/>
+                            <constraint firstItem="vAn-b2-WcR" firstAttribute="top" secondItem="TrI-PN-ypk" secondAttribute="bottom" constant="8.5" id="0YQ-XN-fI3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jkM-en-mlE" secondAttribute="bottom" constant="49" id="0az-N7-1HT"/>
                             <constraint firstItem="jkM-en-mlE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="10J-jr-ouK"/>
-                            <constraint firstItem="TrI-PN-ypk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A5i-gr-FTn"/>
+                            <constraint firstItem="TrI-PN-ypk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="A5i-gr-FTn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jkM-en-mlE" secondAttribute="trailing" id="GIY-wp-obH"/>
-                            <constraint firstItem="Zwx-ub-J1H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="KUT-3Y-qHx"/>
+                            <constraint firstItem="Zwx-ub-J1H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="KUT-3Y-qHx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zwx-ub-J1H" secondAttribute="trailing" constant="20" id="T5Z-UO-WDm"/>
                             <constraint firstItem="baj-MX-q6v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wn8-C2-Njf"/>
                             <constraint firstItem="jkM-en-mlE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YdL-pG-yUW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TrI-PN-ypk" secondAttribute="trailing" constant="20" id="aT0-7v-95f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TrI-PN-ypk" secondAttribute="trailing" constant="11" id="aT0-7v-95f"/>
                             <constraint firstItem="vAn-b2-WcR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c1e-u5-7zW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nQE-qF-VlP" secondAttribute="trailing" constant="20" id="gd8-zH-G2C"/>
                             <constraint firstItem="Zwx-ub-J1H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hSs-7E-YTJ"/>
