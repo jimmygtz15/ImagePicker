@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
         unsubscribeFromKeyboardHideNotifications()
     }
-        
+            
     func configureMemeTextField(textField: UITextField, text: String) {
             textField.delegate = self
             textField.text = text
@@ -48,13 +48,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareButtonPressed(_ sender: Any) {
         let items = [generatedMemedImage()]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true, completion: nil)
+        ac.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            if !completed {
+                // User canceled
+                return
+            }
+            // User completed activity
+            self.save()
+        }
+
+        self.present(ac, animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         imagePickerView.image = .none
         configureMemeTextField(textField: topTextField, text: "TOP")
         configureMemeTextField(textField: bottomTextField, text: "BOTTOM")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -144,6 +154,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         toolBar.isHidden = true
         navigationController?.isNavigationBarHidden = true
         shareButton.isHidden = true
+        cancelButton.isHidden = true
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
@@ -151,6 +162,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         toolBar.isHidden = false
         navigationController?.isNavigationBarHidden = false
         shareButton.isHidden = false
+        cancelButton.isHidden = false
         return memedImage
+    }
+    
+    func save() {
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generatedMemedImage())
+        
+        let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
+        
+        print("MEME SAVED")
+        print("\(appDelegate.memes.count)")
+        self.dismiss(animated: true, completion: nil)
     }
 }
