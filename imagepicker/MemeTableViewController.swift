@@ -68,6 +68,16 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memeDetailViewController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        
+        let myMeme = self.memes[(indexPath as NSIndexPath).row]
+        memeDetailViewController.memedImage = myMeme.memedImage
+
+        self.navigationController!.pushViewController(memeDetailViewController, animated: true)
+    }
+
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let rowHeight = (view.frame.size.height) / 5.0
         return rowHeight

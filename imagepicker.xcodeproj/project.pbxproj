@@ -17,6 +17,7 @@
 		B3B2A48825333AF50060186F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2A48725333AF50060186F /* Assets.xcassets */; };
 		B3B2A48B25333AF50060186F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B2A48925333AF50060186F /* LaunchScreen.storyboard */; };
 		B3DBF2802572B10A00DAC513 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBF27E2572B10A00DAC513 /* MemeCollectionViewCell.swift */; };
+		B3DBF28A25732FC300DAC513 /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBF28925732FC300DAC513 /* MemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B3B2A48A25333AF50060186F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3B2A48C25333AF50060186F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3DBF27E2572B10A00DAC513 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B3DBF28925732FC300DAC513 /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				B320FFDA2572A59800B4EDFF /* MemeCollectionViewController.swift */,
 				B320FFDD2572A5B200B4EDFF /* MemeTableViewController.swift */,
 				B3DBF27E2572B10A00DAC513 /* MemeCollectionViewCell.swift */,
+				B3DBF28925732FC300DAC513 /* MemeDetailViewController.swift */,
 			);
 			path = imagepicker;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				B3DBF2802572B10A00DAC513 /* MemeCollectionViewCell.swift in Sources */,
 				B3B2A48125333AF30060186F /* SceneDelegate.swift in Sources */,
 				B320FFD82571A71500B4EDFF /* MemeModel.swift in Sources */,
+				B3DBF28A25732FC300DAC513 /* MemeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
