@@ -10,8 +10,8 @@ import UIKit
 //private let reuseIdentifier = "MemeCollectionViewCell"
 
 class MemeCollectionViewController: UICollectionViewController {
-    
     @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate as! AppDelegate
@@ -21,16 +21,24 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        subscribeToMemeChangesNotifications()
         navigationBar.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-
-        // Uncomment the following line to preserve selection between presentations
+       
+        let space: CGFloat = 3.0
+        let dimensionWidth = (view.frame.size.width - (2 * space)) / 3.0
+        let dimensionHeight = (view.frame.size.height - (2 * space) ) / 4.0
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimensionWidth, height: dimensionHeight)
          self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(MemeCollectionViewCell.self, forCellWithReuseIdentifier: "MemeCollectionViewCell")
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func reloadMemeData(_ notification: Notification) {
+        collectionView.reloadData()
+    }
+    
+    func subscribeToMemeChangesNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMemeData(_:)), name: NSNotification.Name.memeArrayChanged, object: nil)
     }
     
     @objc func addTapped() {
@@ -41,23 +49,18 @@ class MemeCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return memes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
-        
         let myMeme = self.memes[(indexPath as NSIndexPath).row]
         cell.memeImageView?.image = myMeme.memedImage
-
-        
         return cell
     }
 

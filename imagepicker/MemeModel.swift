@@ -15,3 +15,7 @@ struct Meme {
     let memedImage: UIImage
     
 }
+
+extension NSNotification.Name {
+    static let memeArrayChanged = NSNotification.Name("memeArrayChanged")
+}

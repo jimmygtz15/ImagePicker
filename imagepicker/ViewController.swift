@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         .strokeColor: UIColor.black,
@@ -175,6 +176,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         print("MEME SAVED")
         print("\(appDelegate.memes.count)")
-        self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name.memeArrayChanged, object: nil)
+//        self.dismiss(animated: true) {
+//        NotificationCenter.default.post(name: Notification.Name.memeArrayChanged, object: nil)
+//            
+//        }
     }
 }
