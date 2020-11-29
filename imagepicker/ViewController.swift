@@ -140,7 +140,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        view.frame.origin.y = 0//getKeyboardHeight(notification)
+        view.frame.origin.y = 0
     }
     
     func subscribeToKeyboardHideNotifications() {
@@ -169,17 +169,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generatedMemedImage())
-        
         let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.memes.append(meme)
-        
-        print("MEME SAVED")
-        print("\(appDelegate.memes.count)")
+        self.dismiss(animated: true) {
         NotificationCenter.default.post(name: Notification.Name.memeArrayChanged, object: nil)
-//        self.dismiss(animated: true) {
-//        NotificationCenter.default.post(name: Notification.Name.memeArrayChanged, object: nil)
-//            
-//        }
+            
+        }
     }
 }

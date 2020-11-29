@@ -25,13 +25,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovx-aY-GNX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-986" y="-258"/>
+            <point key="canvasLocation" x="-875" y="-260"/>
         </scene>
-        <!--Table View-->
+        <!--Navigation Controller-->
         <scene sceneID="mK3-ox-p4I">
             <objects>
                 <navigationController id="EdV-UX-9Ut" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table View" id="SSP-eX-hJq"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" id="SSP-eX-hJq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Grb-Eo-aWP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -44,11 +44,11 @@
             </objects>
             <point key="canvasLocation" x="103" y="86"/>
         </scene>
-        <!--Collection View-->
+        <!--Navigation Controller-->
         <scene sceneID="e2Z-HJ-iVc">
             <objects>
                 <navigationController id="iEm-iQ-h7W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection View" id="CA1-MW-DMK"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" id="CA1-MW-DMK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7B9-Q5-VAT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="-222"/>
+            <point key="canvasLocation" x="1594" y="-585"/>
         </scene>
         <!--Meme Detail View Controller-->
         <scene sceneID="TU9-s6-8TQ">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXx-TG-EdR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="-252"/>
+            <point key="canvasLocation" x="1593" y="86"/>
         </scene>
         <!--Meme Table View Controller-->
         <scene sceneID="g5c-TL-Umh">
@@ -303,7 +303,9 @@
     <resources>
         <image name="LaunchImage" width="1536" height="2048"/>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="collection_30x30" width="30" height="30"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="table_30x30" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

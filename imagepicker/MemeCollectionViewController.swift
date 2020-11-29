@@ -6,9 +6,6 @@
 //
 
 import UIKit
-
-//private let reuseIdentifier = "MemeCollectionViewCell"
-
 class MemeCollectionViewController: UICollectionViewController {
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -23,7 +20,7 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         subscribeToMemeChangesNotifications()
         navigationBar.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-       
+        navigationBar.title = "Sent Memes"
         let space: CGFloat = 3.0
         let dimensionWidth = (view.frame.size.width - (2 * space)) / 3.0
         let dimensionHeight = (view.frame.size.height - (2 * space) ) / 4.0
@@ -63,36 +60,14 @@ class MemeCollectionViewController: UICollectionViewController {
         cell.memeImageView?.image = myMeme.memedImage
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeDetailViewController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        
+        let myMeme = self.memes[(indexPath as NSIndexPath).row]
+        memeDetailViewController.memedImage = myMeme.memedImage
+
+        self.navigationController!.pushViewController(memeDetailViewController, animated: true)
     }
-    */
 
 }
